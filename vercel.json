@@ -1,6 +1,5 @@
 {
     "version": 2,
-   "esModuleInterop": true,
     "builds": [
         {
             "src": "src/main.ts",
