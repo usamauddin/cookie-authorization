@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "allowSyntheticDefaultImports": true,
    "esModuleInterop": true,
     "builds": [
         {
