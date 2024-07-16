@@ -1,4 +1,4 @@
-import { Controller, Get, Res, flatten } from '@nestjs/common';
+import { Controller, Get, Post, Res, flatten } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Response } from 'express';
 import * as CryptoJS from 'crypto-js'
@@ -13,7 +13,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/set-cookie')
+  @Post('/set-cookie')
   async setCookie(@Res() res: Response) {
     try {
       const token = 'tezeract'

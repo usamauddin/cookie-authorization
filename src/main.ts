@@ -13,7 +13,7 @@ async function bootstrap() {
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Origin']
   })
 
-  await app.listen(3000);
+  await app.listen(3001);
   console.log('server running at 3000');
 
 }
