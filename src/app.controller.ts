@@ -18,16 +18,20 @@ export class AppController {
     try {
       const token = 'tezeract'
       // var encrypted = CryptoJS.AES.encrypt(token, 'abc');
-      const encrypted =   CryptoJS.AES.encrypt(JSON.stringify(token), 'secret key 123').toString();
+      const encrypted = CryptoJS.AES.encrypt(JSON.stringify(token), 'secret key 123').toString();
 
       res.cookie('cookie', encrypted, {
         expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
         sameSite: 'lax',
         secure: false,
-        httpOnly : false
+        httpOnly: false
       })
+      // res.setHeader("Access-Control-Allow-Origin", "*")
       res.setHeader("Access-Control-Allow-Origin", "*")
-      res.send({ message: 'cookie sent'})
+      res.setHeader("Access-Control-Allow-Credentials", "true");
+      res.setHeader("Access-Control-Max-Age", "1800");
+      res.setHeader("Access-Control-Allow-Headers", "content-type");
+      res.send({ message: 'cookie sent' })
     } catch (error) {
       throw error
     }
