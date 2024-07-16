@@ -26,6 +26,7 @@ export class AppController {
         secure: false,
         httpOnly : false
       })
+      res.setHeader("Access-Control-Allow-Origin", "*")
       res.send({ message: 'cookie sent'})
     } catch (error) {
       throw error
