@@ -6,18 +6,13 @@ import cors from "cors";
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser())
-  // app.enableCors({
-  //   origin: "http://localhost:3000",
-  //   methods: "GET,PUT,PATCH,POST,DELETE",
-  //   credentials: true,
-  //   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Origin']
-  // })
-  const corsOrigin = {
-    origin: 'http://localhost:3000', //or whatever port your frontend is using
+  app.enableCors({
+    origin: "http://localhost:3000",
+    methods: "GET,PUT,PATCH,POST,DELETE",
     credentials: true,
-    optionSuccessStatus: 200
-  }
-  app.use(cors(corsOrigin));
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Origin']
+  })
+
   await app.listen(3000);
   console.log('server running at 3000');
 
