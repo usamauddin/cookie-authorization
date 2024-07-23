@@ -22,12 +22,13 @@ export class AppController {
 
       res.cookie('cookie', encrypted, {
         expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
-        sameSite: 'none',
-        secure: false,
-        httpOnly: false
+        sameSite: 'strict',
+        secure: true,
+        httpOnly: true,
+        path: '/'
       })
       // res.setHeader("Access-Control-Allow-Origin", "*")
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
+      res.setHeader("Access-Control-Allow-Origin", "https://app.getgeek.ai/")
       // res.setHeader("Access-Control-Allow-Credentials", "true");
       // res.setHeader("Access-Control-Max-Age", "1800");
       // res.setHeader("Access-Control-Allow-Headers", "content-type");
