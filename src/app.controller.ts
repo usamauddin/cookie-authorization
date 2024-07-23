@@ -3,7 +3,6 @@ import { AppService } from './app.service';
 import { Response } from 'express';
 import * as CryptoJS from 'crypto-js'
 
-
 @Controller('/')
 export class AppController {
   constructor(private readonly appService: AppService) { }
@@ -28,10 +27,10 @@ export class AppController {
         path: '/'
       })
       // res.setHeader("Access-Control-Allow-Origin", "*")
-      res.setHeader("Access-Control-Allow-Origin", "https://app.getgeek.ai/")
-      // res.setHeader("Access-Control-Allow-Credentials", "true");
-      // res.setHeader("Access-Control-Max-Age", "1800");
-      // res.setHeader("Access-Control-Allow-Headers", "content-type");
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
+      res.setHeader("Access-Control-Allow-Credentials", "true");
+      res.setHeader("Access-Control-Max-Age", "1800");
+      res.setHeader("Access-Control-Allow-Headers", "content-type");
       res.send({ message: 'cookie sent' })
     } catch (error) {
       throw error

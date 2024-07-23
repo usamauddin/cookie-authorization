@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser())
   app.enableCors({
-    origin: "https://app.getgeek.ai",
+    origin: "http://localhost:3000",
     methods: "GET,PUT,PATCH,POST,DELETE",
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Origin']
